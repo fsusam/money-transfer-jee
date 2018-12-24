@@ -14,10 +14,6 @@ public interface CustomerDAO {
 
     public void addAccount(final Account account);
 
-    public List<Customer> findCustomerByIbanAndName(final String iban, final String name);
-
-    public List<Account> findAccountByCustomerIdAndIban(final int customerId, final String iban);
-
     public List<Account> findAccountByIban(final String iban);
 
     public void updateAccount(final Account account);

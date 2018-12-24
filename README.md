@@ -74,5 +74,22 @@ All Fail and Success cases are tested
 mvn clean install -Ptest-suite
 ```
 
+# Design
+## Entity UML Diagram
+![Entity UML Diagram](uml/Money_Transfer_Entity_Diagram.png)
+
+## Component UML Diagram
+![Component UML Diagram](uml/Money_Transfer_Component_Diagram.png)
+
+## Flow Chart UML Diagram
+![Flow Chart UML Diagram](uml/Money_Transfer_Flow_Diagram.png)
+
+## Sequence UML Diagram
+![Sequence UML Diagram](uml/Money_Transfer_Sequence_Diagram.png)
+
+These UML diagrams can be edited on [draw.io](https://www.draw.io/)
+
+# Note
+Scheduler Service has been not implemented for the current version (1.0-SNAPSHOT). It will be planned to next version
 
 

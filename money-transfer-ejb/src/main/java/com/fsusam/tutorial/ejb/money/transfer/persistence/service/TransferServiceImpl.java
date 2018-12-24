@@ -30,12 +30,4 @@ public class TransferServiceImpl implements TransferService {
 
         accountTransactionalService.updateAccountBalance(sourceAccount, targetAccount, amount);
     }
-
-    public AccountTransactionalService getAccountTransactionalService() {
-        return accountTransactionalService;
-    }
-
-    public void setAccountTransactionalService(final AccountTransactionalService accountTransactionalService) {
-        this.accountTransactionalService = accountTransactionalService;
-    }
 }

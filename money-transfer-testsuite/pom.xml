@@ -84,7 +84,7 @@
 
     <profiles>
         <profile>
-            <id>arq-wildfly-managed</id>
+            <id>test-suite</id>
             <dependencies>
                 <dependency>
                     <groupId>org.wildfly</groupId>

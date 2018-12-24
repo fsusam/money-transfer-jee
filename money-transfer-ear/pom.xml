@@ -28,19 +28,6 @@
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
-        <!--<dependency>
-            <groupId>com.fsusam.tutorial</groupId>
-            <artifactId>money-transfer-ejb</artifactId>
-            <version>${project.version}</version>
-            <type>ejb</type>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fsusam.tutorial</groupId>
-            <artifactId>money-transfer-jar</artifactId>
-            <version>${project.version}</version>
-            <type>jar</type>
-        </dependency>-->
     </dependencies>
 
     <build>
@@ -68,30 +55,15 @@
                             <artifactId>money-transfer-war</artifactId>
                             <contextRoot>${project.war.contextRoot}</contextRoot>
                         </webModule>
-                        <!-- <jarModule>
-                             <groupId>com.fsusam.tutorial</groupId>
-                             <artifactId>money-transfer-jar</artifactId>
-                         </jarModule>
-                         <ejbModule>
-                             <groupId>com.fsusam.tutorial</groupId>
-                             <artifactId>money-transfer-ejb</artifactId>
-                         </ejbModule>-->
                     </modules>
                 </configuration>
             </plugin>
-            <!--<plugin>
-                <groupId>org.wildfly.plugins</groupId>
-                <artifactId>wildfly-maven-plugin</artifactId>
-                <configuration>
-                    <skip>false</skip>
-                </configuration>
-            </plugin>-->
         </plugins>
     </build>
 
     <profiles>
         <profile>
-            <id>add_resource</id>
+            <id>start-wildfly</id>
             <build>
                 <plugins>
                     <plugin>
@@ -168,30 +140,6 @@
                                     </filename>
                                 </configuration>
                             </execution>
-                            <!--<execution>
-                                <id>add-data-source</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>start</goal>
-                                    <goal>add-resource</goal>
-                                </goals>
-                                <configuration>
-                                    <address>subsystem=datasources,data-source=java:jboss/myDs</address>
-                                    <resources>
-                                        <resource>
-                                            <properties>
-                                                <jndi-name>java:jboss/myDs</jndi-name>
-                                                <enabled>true</enabled>
-                                                <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</connection-url>
-                                                <driver-class>org.h2.Driver</driver-class>
-                                                <driver-name>h2</driver-name>
-                                                <user-name>sa</user-name>
-                                                <password>sa</password>
-                                            </properties>
-                                        </resource>
-                                    </resources>
-                                </configuration>
-                            </execution>-->
                         </executions>
                         <configuration>
                             <skip>false</skip>

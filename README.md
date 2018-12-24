@@ -13,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Running
 Run the project
 ```
-mvn clean install wildfly:run
+mvn clean install -Pstart-wildfly
 ```
 
 Sample customers are created when the project up.
@@ -71,7 +71,7 @@ mvn wildfly:shutdown
 ### Automated Test
 All Fail and Success cases are tested 
 ```
-mvn clean install -Parq-wildfly-managed
+mvn clean install -Ptest-suite
 ```
 
 

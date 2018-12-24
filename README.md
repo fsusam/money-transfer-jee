@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 - Postman or Curl (Optional for test)
 
 ## Running And Tests
-###Running
+### Running
 Run the project
 ```
 mvn clean install wildfly:run
@@ -29,7 +29,7 @@ IBAN : IE42AIBK22226455592222
 Balance : 0
 ``` 
 
-###Manual Test
+### Manual Test
 
 Sample JSON Data
 ```
@@ -68,7 +68,7 @@ or
 mvn wildfly:shutdown
 ```
 
-###Automated Test
+### Automated Test
 All Fail and Success cases are tested 
 ```
 mvn clean install -Parq-wildfly-managed

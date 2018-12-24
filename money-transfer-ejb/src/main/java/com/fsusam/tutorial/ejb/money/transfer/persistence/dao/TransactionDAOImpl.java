@@ -1,4 +1,4 @@
-package dao;
+package com.fsusam.tutorial.ejb.money.transfer.persistence.dao;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

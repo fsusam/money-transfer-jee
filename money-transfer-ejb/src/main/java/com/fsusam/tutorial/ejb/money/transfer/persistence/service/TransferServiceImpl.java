@@ -12,7 +12,7 @@ import com.fsusam.tutorial.jar.money.transfer.ejb.utils.Validation;
 @Stateless
 public class TransferServiceImpl implements TransferService {
 
-    @EJB(beanName = "AccountTransactionalServiceImpl")
+    @EJB
     private AccountTransactionalService accountTransactionalService;
 
     @Override

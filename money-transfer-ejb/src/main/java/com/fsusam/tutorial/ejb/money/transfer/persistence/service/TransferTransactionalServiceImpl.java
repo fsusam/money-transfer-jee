@@ -12,7 +12,7 @@ import com.fsusam.tutorial.jar.money.transfer.ejb.service.TransferTransactionalS
 @Stateless
 public class TransferTransactionalServiceImpl implements TransferTransactionalService {
 
-    @EJB(beanName = "TransactionDAOImpl")
+    @EJB
     private TransactionDAO transactionDAO;
 
     @Override

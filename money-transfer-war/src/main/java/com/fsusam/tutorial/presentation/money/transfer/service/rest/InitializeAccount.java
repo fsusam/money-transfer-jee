@@ -20,10 +20,10 @@ public class InitializeAccount {
 
     private String status;
 
-    @EJB(beanName = "CustomerTransactionalServiceImpl")
+    @EJB
     private CustomerTransactionalService customerService;
 
-    @EJB(beanName = "AccountTransactionalServiceImpl")
+    @EJB
     private AccountTransactionalService accountService;
 
     @PostConstruct

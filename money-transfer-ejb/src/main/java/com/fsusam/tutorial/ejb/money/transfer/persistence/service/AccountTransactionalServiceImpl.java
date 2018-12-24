@@ -19,10 +19,10 @@ import com.fsusam.tutorial.jar.money.transfer.ejb.service.AccountTransactionalSe
 @Stateless
 public class AccountTransactionalServiceImpl implements AccountTransactionalService {
 
-    @EJB(beanName = "CustomerDAOImpl")
+    @EJB
     private CustomerDAO customerDAO;
 
-    @EJB(beanName = "TransactionDAOImpl")
+    @EJB
     private TransactionDAO transactionDAO;
 
     @Override

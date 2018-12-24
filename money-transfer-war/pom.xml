@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>money-transfer</artifactId>
+        <groupId>com.fsusam.tutorial</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>money-transfer-war</artifactId>
+    <packaging>war</packaging>
+    <name>[${project.parent.artifactId}] WAR module</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.fsusam.tutorial</groupId>
+            <artifactId>money-transfer-ejb</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fsusam.tutorial</groupId>
+            <artifactId>money-transfer-jar</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- JEE Dependencies -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+
+        <!-- 3PP Dependencies -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+    </dependencies>
+</project>

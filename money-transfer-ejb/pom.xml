@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>money-transfer</artifactId>
+        <groupId>com.fsusam.tutorial</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>money-transfer-ejb</artifactId>
+    <packaging>ejb</packaging>
+    <name>[${project.parent.artifactId}] EJB module</name>
+
+    <properties>
+        <version.ejb>3.2</version.ejb>
+        <version.maven-ejb-plugin>3.0.1</version.maven-ejb-plugin>
+    </properties>
+
+    <dependencies>
+        <!-- JEE Dependencies -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testfun</groupId>
+            <artifactId>jee</artifactId>
+            <version>1.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- This plugin generates J2EE Enterprise Javabean (EJB) file as well as the associated client jar. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <version>${version.maven-ejb-plugin}</version>
+                <configuration>
+                    <ejbVersion>${version.ejb}</ejbVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -3,14 +3,16 @@ package com.fsusam.tutorial.ejb.money.transfer.persistence.service;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
-import com.fsusam.tutorial.ejb.money.transfer.persistence.exception.MoneyTransferException;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Account;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.utils.Validation;
+import com.fsusam.tutorial.jar.money.transfer.ejb.exception.MoneyTransferException;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Account;
+import com.fsusam.tutorial.jar.money.transfer.ejb.service.AccountTransactionalService;
+import com.fsusam.tutorial.jar.money.transfer.ejb.service.TransferService;
+import com.fsusam.tutorial.jar.money.transfer.ejb.utils.Validation;
 
 @Stateless
 public class TransferServiceImpl implements TransferService {
 
-    @EJB
+    @EJB(beanName = "AccountTransactionalServiceImpl")
     private AccountTransactionalService accountTransactionalService;
 
     @Override
@@ -29,4 +31,11 @@ public class TransferServiceImpl implements TransferService {
         accountTransactionalService.updateAccountBalance(sourceAccount, targetAccount, amount);
     }
 
+    public AccountTransactionalService getAccountTransactionalService() {
+        return accountTransactionalService;
+    }
+
+    public void setAccountTransactionalService(final AccountTransactionalService accountTransactionalService) {
+        this.accountTransactionalService = accountTransactionalService;
+    }
 }

@@ -1,4 +1,4 @@
-package com.fsusam.tutorial.ejb.money.transfer.persistence.model;
+package com.fsusam.tutorial.jar.money.transfer.ejb.model;
 
 import java.io.Serializable;
 

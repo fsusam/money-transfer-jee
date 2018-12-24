@@ -15,16 +15,15 @@
     <name>[${project.parent.artifactId}] WAR module</name>
 
     <dependencies>
-
         <dependency>
             <groupId>com.fsusam.tutorial</groupId>
-            <artifactId>money-transfer-ejb</artifactId>
+            <artifactId>money-transfer-jar</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.fsusam.tutorial</groupId>
-            <artifactId>money-transfer-jar</artifactId>
+            <artifactId>money-transfer-ejb</artifactId>
             <version>${project.version}</version>
         </dependency>
 

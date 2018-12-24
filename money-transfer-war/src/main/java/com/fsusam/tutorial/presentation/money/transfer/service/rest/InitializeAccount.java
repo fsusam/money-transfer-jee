@@ -8,10 +8,10 @@ import javax.ejb.Startup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Account;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Customer;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.service.AccountTransactionalService;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.service.CustomerTransactionalService;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Account;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Customer;
+import com.fsusam.tutorial.jar.money.transfer.ejb.service.AccountTransactionalService;
+import com.fsusam.tutorial.jar.money.transfer.ejb.service.CustomerTransactionalService;
 
 @Startup
 @Singleton

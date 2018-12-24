@@ -28,12 +28,19 @@
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.fsusam.tutorial</groupId>
             <artifactId>money-transfer-ejb</artifactId>
             <version>${project.version}</version>
             <type>ejb</type>
         </dependency>
+
+        <dependency>
+            <groupId>com.fsusam.tutorial</groupId>
+            <artifactId>money-transfer-jar</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>-->
     </dependencies>
 
     <build>
@@ -61,20 +68,137 @@
                             <artifactId>money-transfer-war</artifactId>
                             <contextRoot>${project.war.contextRoot}</contextRoot>
                         </webModule>
-                        <ejbModule>
-                            <groupId>com.fsusam.tutorial</groupId>
-                            <artifactId>money-transfer-ejb</artifactId>
-                        </ejbModule>
+                        <!-- <jarModule>
+                             <groupId>com.fsusam.tutorial</groupId>
+                             <artifactId>money-transfer-jar</artifactId>
+                         </jarModule>
+                         <ejbModule>
+                             <groupId>com.fsusam.tutorial</groupId>
+                             <artifactId>money-transfer-ejb</artifactId>
+                         </ejbModule>-->
                     </modules>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <configuration>
                     <skip>false</skip>
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>add_resource</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-ear-plugin</artifactId>
+                        <version>${version.maven-ear-plugin}</version>
+                        <configuration>
+                            <version>${version.jee}</version>
+                            <workDirectory>target/${project.parent.artifactId}-${project.version}</workDirectory>
+                            <defaultLibBundleDir>${project.ear.defaultLibBundleDir}</defaultLibBundleDir>
+                            <description>${project.parent.artifactId} JEE6 service</description>
+                            <displayName>${project.parent.artifactId} JEE6 service</displayName>
+                            <archive>
+                                <manifestEntries>
+                                    <Dependencies>${project.ear.Dependencies}</Dependencies>
+                                    <Dependencies>org.jboss.jts</Dependencies>
+                                </manifestEntries>
+                            </archive>
+                            <modules>
+                                <webModule>
+                                    <groupId>com.fsusam.tutorial</groupId>
+                                    <artifactId>money-transfer-war</artifactId>
+                                    <contextRoot>${project.war.contextRoot}</contextRoot>
+                                </webModule>
+                            </modules>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.wildfly.plugins</groupId>
+                        <artifactId>wildfly-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>start</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>start</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>add-datasource</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>add-resource</goal>
+                                </goals>
+                                <configuration>
+                                    <address>subsystem=datasources,data-source=java:jboss/myDs</address>
+                                    <resources>
+                                        <resource>
+                                            <properties>
+                                                <jndi-name>java:jboss/myDs</jndi-name>
+                                                <enabled>true</enabled>
+                                                <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</connection-url>
+                                                <driver-class>org.h2.Driver</driver-class>
+                                                <driver-name>h2</driver-name>
+                                                <user-name>sa</user-name>
+                                                <password>sa</password>
+                                            </properties>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>deploy</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>deploy-only</goal>
+                                </goals>
+                                <configuration>
+                                    <targetDir>
+                                        ${project.parent.basedir}/money-transfer-ear/target
+                                    </targetDir>
+                                    <filename>
+                                        money-transfer-ear-1.0-SNAPSHOT.ear
+                                    </filename>
+                                </configuration>
+                            </execution>
+                            <!--<execution>
+                                <id>add-data-source</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>start</goal>
+                                    <goal>add-resource</goal>
+                                </goals>
+                                <configuration>
+                                    <address>subsystem=datasources,data-source=java:jboss/myDs</address>
+                                    <resources>
+                                        <resource>
+                                            <properties>
+                                                <jndi-name>java:jboss/myDs</jndi-name>
+                                                <enabled>true</enabled>
+                                                <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</connection-url>
+                                                <driver-class>org.h2.Driver</driver-class>
+                                                <driver-name>h2</driver-name>
+                                                <user-name>sa</user-name>
+                                                <password>sa</password>
+                                            </properties>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>-->
+                        </executions>
+                        <configuration>
+                            <skip>false</skip>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

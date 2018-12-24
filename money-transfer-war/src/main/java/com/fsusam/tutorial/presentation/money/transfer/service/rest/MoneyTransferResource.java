@@ -26,8 +26,8 @@ import javax.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fsusam.tutorial.ejb.money.transfer.persistence.exception.MoneyTransferException;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.service.TransferService;
+import com.fsusam.tutorial.jar.money.transfer.ejb.exception.MoneyTransferException;
+import com.fsusam.tutorial.jar.money.transfer.ejb.service.TransferService;
 import com.fsusam.tutorial.jar.money.transfer.rest.util.ErrorResponse;
 import com.fsusam.tutorial.jar.money.transfer.rest.util.TransferMoneyRequest;
 import com.google.gson.Gson;
@@ -40,7 +40,7 @@ public class MoneyTransferResource {
 
     private static final Gson GSON = new Gson();
 
-    @EJB(beanName = "TransferServiceImpl")
+    @EJB
     private TransferService transferService;
     /*
      * @EJB private CustomerTransactionalServiceImpl customerService;

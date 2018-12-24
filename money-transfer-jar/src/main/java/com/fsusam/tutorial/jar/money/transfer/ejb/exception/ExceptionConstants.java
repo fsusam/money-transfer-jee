@@ -1,4 +1,4 @@
-package com.fsusam.tutorial.ejb.money.transfer.persistence.exception;
+package com.fsusam.tutorial.jar.money.transfer.ejb.exception;
 
 public enum ExceptionConstants {
     CUSTOMER_NOT_FOUND(1, "Customer was Not Found"),

@@ -127,10 +127,25 @@
                                 <id>start-wf</id>
                                 <goals>
                                     <goal>start</goal>
-                                    <goal>deploy</goal>
+                                    <goal>add-resource</goal>
+                                    <goal>deploy-only</goal>
                                 </goals>
                                 <phase>pre-integration-test</phase>
                                 <configuration>
+                                    <address>subsystem=datasources,data-source=java:jboss/myDs</address>
+                                    <resources>
+                                        <resource>
+                                            <properties>
+                                                <jndi-name>java:jboss/myDs</jndi-name>
+                                                <enabled>true</enabled>
+                                                <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</connection-url>
+                                                <driver-class>org.h2.Driver</driver-class>
+                                                <driver-name>h2</driver-name>
+                                                <user-name>sa</user-name>
+                                                <password>sa</password>
+                                            </properties>
+                                        </resource>
+                                    </resources>
                                     <targetDir>
                                         ${project.parent.basedir}/money-transfer-ear/target
                                     </targetDir>

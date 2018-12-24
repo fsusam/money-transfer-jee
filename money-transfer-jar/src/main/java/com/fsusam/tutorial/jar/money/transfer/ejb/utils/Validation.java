@@ -1,7 +1,7 @@
-package com.fsusam.tutorial.ejb.money.transfer.persistence.utils;
+package com.fsusam.tutorial.jar.money.transfer.ejb.utils;
 
-import com.fsusam.tutorial.ejb.money.transfer.persistence.exception.ExceptionConstants;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.exception.MoneyTransferException;
+import com.fsusam.tutorial.jar.money.transfer.ejb.exception.ExceptionConstants;
+import com.fsusam.tutorial.jar.money.transfer.ejb.exception.MoneyTransferException;
 
 public class Validation {
 

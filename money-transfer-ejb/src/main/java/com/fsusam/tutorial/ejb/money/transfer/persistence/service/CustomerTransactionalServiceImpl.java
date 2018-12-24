@@ -6,15 +6,16 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.transaction.Transactional;
 
-import com.fsusam.tutorial.ejb.money.transfer.persistence.dao.CustomerDAO;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Account;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Customer;
+import com.fsusam.tutorial.jar.money.transfer.ejb.dao.CustomerDAO;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Account;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Customer;
+import com.fsusam.tutorial.jar.money.transfer.ejb.service.CustomerTransactionalService;
 
 @Transactional
 @Stateless
 public class CustomerTransactionalServiceImpl implements CustomerTransactionalService {
 
-    @EJB
+    @EJB(beanName = "CustomerDAOImpl")
     private CustomerDAO customerDAO;
 
     @Override

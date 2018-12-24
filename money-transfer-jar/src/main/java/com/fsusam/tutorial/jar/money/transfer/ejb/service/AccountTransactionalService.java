@@ -1,9 +1,9 @@
-package com.fsusam.tutorial.ejb.money.transfer.persistence.service;
+package com.fsusam.tutorial.jar.money.transfer.ejb.service;
 
 import javax.ejb.Remote;
 
-import com.fsusam.tutorial.ejb.money.transfer.persistence.exception.MoneyTransferException;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Account;
+import com.fsusam.tutorial.jar.money.transfer.ejb.exception.MoneyTransferException;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Account;
 
 @Remote
 public interface AccountTransactionalService {

@@ -1,4 +1,4 @@
-package com.fsusam.tutorial.ejb.money.transfer.persistence.exception;
+package com.fsusam.tutorial.jar.money.transfer.ejb.exception;
 
 public class MoneyTransferException extends Exception {
     private final int code;

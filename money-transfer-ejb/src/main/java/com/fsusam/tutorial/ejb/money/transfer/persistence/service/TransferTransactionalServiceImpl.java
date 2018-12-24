@@ -4,14 +4,15 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.transaction.Transactional;
 
-import com.fsusam.tutorial.ejb.money.transfer.persistence.dao.TransactionDAO;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Transaction;
+import com.fsusam.tutorial.jar.money.transfer.ejb.dao.TransactionDAO;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Transaction;
+import com.fsusam.tutorial.jar.money.transfer.ejb.service.TransferTransactionalService;
 
 @Transactional
 @Stateless
 public class TransferTransactionalServiceImpl implements TransferTransactionalService {
 
-    @EJB
+    @EJB(beanName = "TransactionDAOImpl")
     private TransactionDAO transactionDAO;
 
     @Override

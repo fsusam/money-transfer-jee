@@ -7,21 +7,22 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.transaction.Transactional;
 
-import com.fsusam.tutorial.ejb.money.transfer.persistence.dao.CustomerDAO;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.dao.TransactionDAO;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.exception.ExceptionConstants;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.exception.MoneyTransferException;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Account;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Transaction;
+import com.fsusam.tutorial.jar.money.transfer.ejb.dao.CustomerDAO;
+import com.fsusam.tutorial.jar.money.transfer.ejb.dao.TransactionDAO;
+import com.fsusam.tutorial.jar.money.transfer.ejb.exception.ExceptionConstants;
+import com.fsusam.tutorial.jar.money.transfer.ejb.exception.MoneyTransferException;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Account;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Transaction;
+import com.fsusam.tutorial.jar.money.transfer.ejb.service.AccountTransactionalService;
 
 @Transactional
 @Stateless
 public class AccountTransactionalServiceImpl implements AccountTransactionalService {
 
-    @EJB
+    @EJB(beanName = "CustomerDAOImpl")
     private CustomerDAO customerDAO;
 
-    @EJB
+    @EJB(beanName = "TransactionDAOImpl")
     private TransactionDAO transactionDAO;
 
     @Override

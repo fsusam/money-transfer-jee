@@ -1,11 +1,11 @@
-package com.fsusam.tutorial.ejb.money.transfer.persistence.service;
+package com.fsusam.tutorial.jar.money.transfer.ejb.service;
 
 import java.util.List;
 
 import javax.ejb.Remote;
 
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Account;
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Customer;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Account;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Customer;
 
 @Remote
 public interface CustomerTransactionalService {

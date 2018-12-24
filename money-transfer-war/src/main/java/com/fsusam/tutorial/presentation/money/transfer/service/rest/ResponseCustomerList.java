@@ -2,7 +2,7 @@ package com.fsusam.tutorial.presentation.money.transfer.service.rest;
 
 import java.util.List;
 
-import com.fsusam.tutorial.ejb.money.transfer.persistence.model.Customer;
+import com.fsusam.tutorial.jar.money.transfer.ejb.model.Customer;
 
 public class ResponseCustomerList {
     private List<Customer> list;

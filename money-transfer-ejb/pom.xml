@@ -20,6 +20,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.fsusam.tutorial</groupId>
+            <artifactId>money-transfer-jar</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
         <!-- JEE Dependencies -->
         <dependency>
             <groupId>javax</groupId>

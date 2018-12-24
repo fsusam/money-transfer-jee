@@ -1,10 +1,7 @@
 # Money Transfer with JEE
 Simulate a money transfer between accounts. Provide Restful API with Wildfly application server 
 
-## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
+## Prerequisites
 - Apache Maven 3.5.4 or above
 - java version "1.8.0_181"
 - Postman or Curl (Optional for test)

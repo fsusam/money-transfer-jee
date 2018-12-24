@@ -26,17 +26,6 @@ public class AccountTransactionalServiceImpl implements AccountTransactionalServ
     private TransactionDAO transactionDAO;
 
     @Override
-    public boolean checkAccount(final String iban) {
-        final List<Account> accounts = customerDAO.findAccountByIban(iban);
-
-        if (accounts != null && accounts.size() > 0) {
-            return true;
-        }
-
-        return false;
-    }
-
-    @Override
     public Account getAccountByIban(final String iban) throws MoneyTransferException {
         final List<Account> list = customerDAO.findAccountByIban(iban);
         if (list != null && list.size() > 0) {
@@ -57,11 +46,6 @@ public class AccountTransactionalServiceImpl implements AccountTransactionalServ
         customerDAO.updateAccount(sourceAccount);
         customerDAO.updateAccount(targetAccount);
         transactionDAO.createTransaction(transaction);
-    }
-
-    @Override
-    public void updateAccount(final Account account) {
-        customerDAO.updateAccount(account);
     }
 
     @Override
